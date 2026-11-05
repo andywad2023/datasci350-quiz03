@@ -62,3 +62,20 @@ The model admitted every time. The response are the same because I set temperatu
   443  ls ollama
   444  cat ollama/modelfile
   445  history | tail -n 50 >> commands.txt
+  446  git add ollama
+  447  git add commands.txt
+  448  git commit -m "Add commentator chatbot"
+  449  git push
+  450  python3 ollama/ask_local.py
+Response: The command `git commit` is used to commit changes made to a Git repository. It creates a commit message and adds the changes to the Git history.
+CompletionUsage(completion_tokens=32, prompt_tokens=36, total_tokens=68, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=0, image_tokens=None, text_tokens=None))
+  451  nano ollama/ask_local.py
+  452  python3 ollama/ask_local.py
+Response: git commit creates a commit message and adds a commit hash to the end of the commit message.
+CompletionUsage(completion_tokens=20, prompt_tokens=85, total_tokens=105, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=3, image_tokens=None, text_tokens=None))
+
+Commentator uses more prompt_tokens because of the modelfile instructions on characterizing the model and giving instructions.
+  453  python3 ollama/ask_json.py
+  454  nano ollama/ask_json.py
+  455  python3 ollama/ask_json.py
+  456  history | tail -n 20 >> commands.txt
