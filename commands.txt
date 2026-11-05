@@ -79,3 +79,46 @@ Commentator uses more prompt_tokens because of the modelfile instructions on cha
   454  nano ollama/ask_json.py
   455  python3 ollama/ask_json.py
   456  history | tail -n 20 >> commands.txt
+  457  git add ollama
+  458  git add commands.txt
+  459  git commit -m "Add Python calls" && git push
+  460  ls
+  461  ls aws
+  462  cat .gitignore
+  463  chmod 400 "datasci350.pem"
+  464  chmod 400 "datasci350.pem"
+  465  ssh -i "datasci350.pem" ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com
+
+From Cloud Instance:
+sudo apt update
+sudo apt upgrade
+sudo apt install python3-pandas
+sudo apt install python3-matplotlib
+sudo apt install python3-seaborn
+exit
+
+  469  scp -i datasci350.pem aws/traffic_analysis.py ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com:~
+  470  scp -i datasci350.pem aws/website_traffic.txt ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com:~
+  471  ssh -i "datasci350.pem" ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com
+
+From Cloud Instance:
+python3 traffic_analysis.py > results.txt
+cat /var/lib/cloud/data/instance-id >> results.txt
+sha256sum results.txt > fingerprint.txt
+cat results.txt
+ls
+exit
+
+  472  scp -i datasci350.pem ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com:~/results.txt ./aws
+  473  scp -i datasci350.pem ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com:~/fingerprint.txt ./aws
+  474  scp -i datasci350.pem ubuntu@ec2-3-23-129-136.us-east-2.compute.amazonaws.com:~/traffic_analysis.png ./aws
+  475  ls aws
+  476  cat aws/results.txt
+  477  history | tail -n 50 >> commands.txt
+When I stop the instance, it just pauses it, there will be no compute charge, but the disk still bills for storage. However, terminating it deletes the instance and all the files and there's no charge after that.
+
+AI Usage: I asked the copilot in VSCode when there was an error with the modelfile, and later I realized myself that I accidentally created it in the root folder, not under ollama. Other than that, I did not use any AI and I did everything myself completely.
+
+Then:
+git add . && git commit -m "Add AWS analysis results"
+git push
